@@ -1,4 +1,3 @@
-import { GetServerSidePropsContext } from "next"
 import Head from "next/head"
 import { Button } from "components/Button/Button"
 import { LP_GRID_ITEMS } from "../../lp-items"
@@ -57,19 +56,4 @@ export default function Web() {
       </section>
     </>
   )
-}
-
-export async function getServerSideProps({ req, res }: GetServerSidePropsContext) {
-  if (req.headers?.host?.includes("next-enterprise.vercel.app")) {
-    return {
-      redirect: {
-        destination: "https://blazity.com/open-source/nextjs-enterprise-boilerplate",
-        permanent: true,
-      },
-    }
-  }
-
-  return {
-    props: {},
-  }
 }
